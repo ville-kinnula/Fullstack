@@ -1,0 +1,13 @@
+title SPA
+
+
+note over selain:
+selain ajaa koodin spa.js.
+Koodi käsittelee lomakkeen tapahtumankäsittelijän avulla, ja lähettää datan
+palvelimelle talletettavaksi POST-käskyllä, mutta luo uuden notes-listan
+loppukäyttäjän näkyviin ilman redirectaus-kutsua palvelimelta.
+end note
+
+selain->palvelin: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+
+
