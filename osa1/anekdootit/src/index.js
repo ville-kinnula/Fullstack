@@ -9,22 +9,22 @@ const Button = ({ onClick, text }) => (
 )
 
 function getRandomInt(max) { 
-  return Math.floor(Math.random() * max); 
+  return Math.floor(Math.random() * max)
 }
 
 function indexOfMax(arr) {
 
-  var max = arr[0];
-  var maxIndex = 0;
+  var max = arr[0]
+  var maxIndex = 0
 
   for (var i = 1; i < arr.length; i++) {
       if (arr[i] > max) {
-          maxIndex = i;
-          max = arr[i];
+          maxIndex = i
+          max = arr[i]
       }
   }
 
-  return maxIndex;
+  return maxIndex
 }
 
 const App = (props) => {
