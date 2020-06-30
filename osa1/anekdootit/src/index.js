@@ -8,16 +8,11 @@ const Button = ({ onClick, text }) => (
   </button>
 )
 
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min; 
+function getRandomInt(max) { 
+  return Math.floor(Math.random() * max); 
 }
 
 function indexOfMax(arr) {
-  if (arr.length === 0) {
-      return -1;
-  }
 
   var max = arr[0];
   var maxIndex = 0;
@@ -40,7 +35,7 @@ const App = (props) => {
 
 
   const handleClickNext = () => {
-    let rand = getRandomInt(0, props.anecdotes.length)
+    let rand = getRandomInt(props.anecdotes.length)
     setSelected(rand)
 
   }
