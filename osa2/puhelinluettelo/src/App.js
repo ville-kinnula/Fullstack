@@ -35,7 +35,7 @@ const App = () => {
           personObject.name = existingPerson.name //added this because capitalized names look nicer
 
           personServices
-            .update(persons.find(person => person.name.toLowerCase() === personObject.name.toLocaleLowerCase()).id, personObject)
+            .update(id, personObject)
             .then(returnedPerson => {
               setPersons(persons.map(person => person.id !== id ? person : returnedPerson))
               setNewName('')
@@ -66,7 +66,15 @@ const App = () => {
             setTimeout(() => {
               setNewNotification('')
             }, 5000)
-          })  
+          })
+          .catch(error => {
+            setNewNotification(`${error.response.data.error}`)
+            setErrorExists(true)
+            setTimeout(() => {
+              setNewNotification('')
+              setErrorExists(false)
+            }, 5000)
+          })
     }
   }
 
@@ -86,7 +94,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Filter</h1>
+      <h1>Filterhahaha</h1>
       <Filter value={newFilter} onChange={handleFilterChange} />
       <h2>Phonebook</h2>
       <Notification message={newNotification} errorExists={errorExists} />
